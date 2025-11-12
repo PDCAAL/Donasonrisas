@@ -34,8 +34,8 @@ export default function Header() {
               <Image
                 src="/logo.png"   // o "/logo_donasonrisas.svg"
                 alt="DonaSonrisas"
-                width={120}
-                height={120}
+                width={180}
+                height={180}
                 // Altura real visible controlada por CSS; no se deforma
                 className="h-10 md:h-12 w-auto object-contain select-none"
                 priority

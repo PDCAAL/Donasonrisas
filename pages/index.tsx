@@ -44,7 +44,7 @@ export default function Home() {
 
           <div className="flex-1 flex justify-center">
             <Image
-              src="/hero.jpg"
+              src="/hero.png"
               alt="Niños felices beneficiados por DonaSonrisas"
               width={520}
               height={400}

@@ -32,7 +32,7 @@ export default function Header() {
             <Link href="/" className="flex items-center gap-3">
               {/* Usa PNG o SVG con fondo transparente */}
               <Image
-                src="/logo_donasonrisas.png"   // o "/logo_donasonrisas.svg"
+                src="/logo.png"   // o "/logo_donasonrisas.svg"
                 alt="DonaSonrisas"
                 width={120}
                 height={120}
