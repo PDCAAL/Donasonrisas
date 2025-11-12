@@ -9,7 +9,7 @@ export default function Home() {
           name="description"
           content="Tu aporte llega donde más se necesita. DonaSonrisas promueve transparencia, impacto y cercanía para transformar vidas."
         />
-        <link rel="icon" href="/favicon_donasonrisas_final.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       {/* HEADER */}
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="container-app flex items-center justify-between py-4">
           <div className="flex items-center gap-3">
             <img
-              src="/favicon_donasonrisas_final.png"
+              src="/faviconº.png"
               alt="Logo DonaSonrisas"
               className="h-10 w-10"
             />
@@ -58,7 +58,7 @@ export default function Home() {
 
           <div className="relative">
             <img
-              src="/hero.jpg"
+              src="/hero.png"
               alt="Niños felices beneficiados por DonaSonrisas"
               className="rounded-2xl shadow-lg object-cover w-full h-[380px]"
             />
