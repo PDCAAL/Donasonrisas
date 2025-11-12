@@ -1,119 +1,86 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function QuienesSomos() {
+export default function Home() {
   return (
     <>
       <Head>
-        <title>Quiénes Somos | DonaSonrisas</title>
+        <title>DonaSonrisas | Ayudemos hoy para transformar el mañana</title>
         <meta
           name="description"
-          content="Conoce la historia y propósito de DonaSonrisas, una organización que desde 2007 lleva alegría, salud y educación a niños en todo el Perú."
+          content="Tu aporte llega donde más se necesita. Transparencia, impacto y cercanía para transformar vidas."
         />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {/* HERO */}
-      <section className="relative bg-gradient-to-b from-red-100 to-white py-20 sm:py-28 text-center">
-        <div className="max-w-4xl mx-auto px-6">
-          <h1 className="text-5xl font-bold text-[#b61c1c] mb-6">
-            Nuestra historia
-          </h1>
-          <p className="text-gray-700 text-lg leading-relaxed max-w-3xl mx-auto">
-            Desde 2007, DonaSonrisas ha crecido gracias al compromiso de personas
-            que creen en el poder de la solidaridad. Todo comenzó con una sencilla
-            visita para compartir juguetes con niños de bajos recursos y se
-            transformó en una misión de vida para miles de familias.
-          </p>
-        </div>
-      </section>
-
-      {/* HISTORIA */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+      <section className="relative bg-gradient-to-b from-red-100 to-white py-14 sm:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
+          {/* Texto */}
           <div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-[#b61c1c] leading-tight mb-6">
+              Ayudemos hoy para <br /> transformar el mañana
+            </h1>
+            <p className="text-gray-700 text-lg mb-8 max-w-xl">
+              Tu aporte llega donde más se necesita. Transparencia, impacto y cercanía.
+              Únete a nosotros para regalar sonrisas y cambiar vidas.
+            </p>
+
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="/donar"
+                className="bg-[#b61c1c] text-white px-6 py-3 rounded-full font-semibold shadow-md hover:bg-[#a11313] transition"
+              >
+                Donar ahora
+              </Link>
+              <Link
+                href="/quienes-somos"
+                className="bg-white border border-[#b61c1c] text-[#b61c1c] px-6 py-3 rounded-full font-semibold hover:bg-[#fce8e8] transition"
+              >
+                Quiénes somos
+              </Link>
+            </div>
+          </div>
+
+          {/* Imagen derecha */}
+          <div className="flex justify-center md:justify-end">
             <Image
-              src="/historia_donasonrisas.jpg"
-              alt="Voluntarios de DonaSonrisas"
-              width={600}
-              height={400}
-              className="rounded-xl shadow-lg"
+              src="/hero.png"     // coloca el archivo en /public/hero.png
+              alt="Niños sonriendo apoyados por DonaSonrisas"
+              width={560}
+              height={420}
+              className="rounded-2xl shadow-lg object-cover w-full max-w-[560px] h-auto"
+              priority
             />
           </div>
-
-          <div>
-            <h2 className="text-3xl font-bold text-[#b61c1c] mb-4">
-              Un inicio que nació del corazón
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              En 2007, un pequeño grupo de voluntarios visitó Pamplona Alta, en Lima,
-              para llevar regalos a niños en situación de vulnerabilidad. Aquella
-              jornada, llena de sonrisas y abrazos, marcó el inicio de lo que hoy es
-              una organización sólida y comprometida con el desarrollo humano.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
-              Con el paso de los años, las actividades navideñas se transformaron en
-              programas permanentes: campañas escolares, apoyo médico, talleres de
-              valores y acompañamiento a familias. El alcance creció, llegando a
-              comunidades en Cajamarca, zonas altoandinas y hospitales como el
-              Oaiza, donde la esperanza siempre encuentra un motivo para sonreír.
-            </p>
-            <p className="text-gray-700 leading-relaxed">
-              Hoy, DonaSonrisas sigue extendiendo su red de apoyo, inspirando a más
-              personas a donar tiempo, recursos y amor. Porque cada sonrisa cuenta.
-            </p>
-          </div>
         </div>
       </section>
 
-      {/* SECCIÓN DE VALORES */}
-      <section className="py-16 bg-[#fdf2f2] text-center">
-        <h2 className="text-3xl font-bold text-[#b61c1c] mb-10">Nuestros valores</h2>
-        <div className="grid sm:grid-cols-3 gap-8 max-w-5xl mx-auto px-6">
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Transparencia</h3>
-            <p className="text-gray-600">
-              Cada donación llega directamente a quienes más lo necesitan, con
-              informes claros y resultados visibles.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Empatía</h3>
-            <p className="text-gray-600">
-              Nos acercamos a las comunidades desde el corazón, escuchando y
-              comprendiendo sus necesidades reales.
-            </p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2">Compromiso</h3>
-            <p className="text-gray-600">
-              Trabajamos de manera constante y voluntaria, convencidos de que cada
-              acción solidaria puede transformar vidas.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* VIDEOS HISTÓRICOS (placeholder para futuro) */}
-      <section className="py-20 bg-white border-t text-center">
-        <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-[#b61c1c] mb-6">
-            Nuestra historia en videos
-          </h2>
-          <p className="text-gray-700 mb-10">
-            Muy pronto podrás revivir los momentos más emotivos de DonaSonrisas a
-            través de nuestros registros por año.
+      {/* Impacto */}
+      <section className="bg-white py-16 border-t">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl font-bold text-[#b61c1c] mb-6">Nuestro impacto</h2>
+          <p className="text-gray-600 mb-12">
+            Gracias a tu ayuda, seguimos llevando alegría a miles de niños y familias en todo el país.
           </p>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {/* Aquí se insertarán los videos futuros */}
-            <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-500">
-              Video 2007 (próximamente)
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-[#b61c1c] font-semibold">
+            <div>
+              <p className="text-3xl font-bold">+5,000</p>
+              <p className="text-gray-600 font-normal">Niños beneficiados</p>
             </div>
-            <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-500">
-              Video 2010 (próximamente)
+            <div>
+              <p className="text-3xl font-bold">120</p>
+              <p className="text-gray-600 font-normal">Colegios aliados</p>
             </div>
-            <div className="bg-gray-200 rounded-lg h-48 flex items-center justify-center text-gray-500">
-              Video 2015 (próximamente)
+            <div>
+              <p className="text-3xl font-bold">24</p>
+              <p className="text-gray-600 font-normal">Regiones atendidas</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold">100%</p>
+              <p className="text-gray-600 font-normal">Transparencia</p>
             </div>
           </div>
         </div>

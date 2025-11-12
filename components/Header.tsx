@@ -1,55 +1,46 @@
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
-
-/**
- * Header con:
- * - Franja superior (promo) dismissible que acompaña el scroll (sin huecos).
- * - Navbar sticky (sin duplicaciones).
- * - Logo al 75% del tamaño anterior (ajustable).
- *
- * Nota: Asegúrate de tener /public/logo_donasonrisas.png con fondo TRANSPARENTE.
- * Si usas SVG, puedes cambiar el <Image> por <img src="/logo_donasonrisas.svg" .../>
- */
 
 export default function Header() {
-  const [promoVisible, setPromoVisible] = useState(true);
-
   return (
     <header className="w-full">
-      {/* CONTENEDOR STICKY ÚNICO para evitar “huecos” al hacer scroll */}
+      {/* CONTENEDOR STICKY ÚNICO: promo + nav (sin huecos) */}
       <div className="sticky top-0 z-50">
-        {/* FRANJA SUPERIOR (se renderiza solo si está visible) */}
-        {promoVisible && (
-          <div className="bg-[#d9443f] text-white text-center text-sm font-medium py-2 relative">
-            <p>
+        {/* BARRA PROMO (ÚNICA) */}
+        <div className="bg-[#d9443f] text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 relative flex items-center justify-center">
+            <p className="text-sm font-medium text-center">
               Dona hoy y multiplica impacto · <span className="font-semibold">Transparencia 100%</span>
             </p>
-            <button
-              aria-label="Cerrar aviso"
-              onClick={() => setPromoVisible(false)}
-              className="absolute right-3 top-1.5 rounded-full bg-white/20 hover:bg-white/30 px-2 py-0.5"
+
+            {/* WhatsApp (derecha) */}
+            <a
+              href="https://wa.me/51997374878"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute right-3 sm:right-4 bg-white text-[#d9443f] px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-100 transition"
             >
-              ✕
-            </button>
+              WhatsApp
+            </a>
           </div>
-        )}
+        </div>
 
         {/* NAV PRINCIPAL */}
         <nav className="bg-white border-b shadow-sm">
-          <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-            {/* LOGO + NOMBRE */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+            {/* LOGO (altura controlada para que no se vea enorme) */}
             <Link href="/" className="flex items-center gap-3">
-              {/* Logo al 75%: si antes era ~120, ahora 90 */}
+              {/* Usa PNG o SVG con fondo transparente */}
               <Image
-                src="/logo.png"
+                src="/logo.png"   // o "/logo_donasonrisas.svg"
                 alt="DonaSonrisas"
-                width={90}
-                height={90}
-                className="object-contain select-none"
+                width={120}
+                height={120}
+                // Altura real visible controlada por CSS; no se deforma
+                className="h-10 md:h-12 w-auto object-contain select-none"
                 priority
               />
-              <span className="text-[#b61c1c] font-bold text-xl tracking-wide">
+              <span className="text-[#b61c1c] font-bold text-lg md:text-xl tracking-wide">
                 DonaSonrisas
               </span>
             </Link>
