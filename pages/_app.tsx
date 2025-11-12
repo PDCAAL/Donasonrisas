@@ -117,11 +117,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         </div>
       )}
 
-      {/* Header fijo compensado por banner */}
-      <Header offsetTop={bannerH} />
-
-      {/* Espaciador (altura del header) */}
-      <div className="h-[6rem]" />
+      <Header />
 
       <main className="mx-auto max-w-7xl px-4 md:px-8">
         <Component {...pageProps} />

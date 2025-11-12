@@ -11,7 +11,7 @@ export default function Home() {
           name="description"
           content="DonaSonrisas es una organización sin fines de lucro que busca llevar alegría, educación y esperanza a los niños que más lo necesitan."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       {/* HERO PRINCIPAL */}
