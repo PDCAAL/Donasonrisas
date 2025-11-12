@@ -1,104 +1,121 @@
-// pages/index.tsx
 import Head from "next/head";
-import Image from "next/image";
-import Link from "next/link";
-import DonationWidget from "@/components/DonationWidget";
-import ImpactCard from "@/components/ImpactCard";
-import ProgramCard from "@/components/ProgramCard";
-import StoryCard from "@/components/StoryCard";
-import NewsletterForm from "@/components/NewsletterForm";
 
 export default function Home() {
   return (
     <>
       <Head>
-        <title>DonaSonrisas — Juntos cambiamos vidas</title>
-        <meta name="description" content="Niñez, salud, educación y respuesta a emergencias. Dona, apadrina o sé voluntario." />
+        <title>DonaSonrisas | Ayudemos hoy para transformar el mañana</title>
+        <meta
+          name="description"
+          content="Tu aporte llega donde más se necesita. DonaSonrisas promueve transparencia, impacto y cercanía para transformar vidas."
+        />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
-      {/* HERO */}
-      <section className="container mt-8 grid md:grid-cols-2 gap-8 items-center">
-        <div>
-          <h1 className="text-3xl md:text-5xl font-bold tracking-tight">
-            Ayudemos hoy para transformar el mañana
-          </h1>
-          <p className="mt-4 text-lg text-gray-600">
-            Tu aporte llega donde más se necesita. Transparencia, impacto y cercanía.
-          </p>
-          <div className="mt-6 flex gap-3">
-            <Link href="/donar" className="btn btn-primary">Donar ahora</Link>
-            <a href="#apadrinar" className="btn btn-outline">Apadrinar</a>
+      {/* HEADER */}
+      <header className="border-b bg-white sticky top-0 z-50 shadow-sm">
+        <div className="container-app flex items-center justify-between py-4">
+          <div className="flex items-center gap-3">
+            <img
+              src="/favicon.png"
+              alt="Logo DonaSonrisas"
+              className="h-10 w-10"
+            />
+            <span className="font-bold text-lg text-brand-red">DonaSonrisas</span>
           </div>
+
+          <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+            <a href="/quienes-somos" className="hover:text-brand-red">Quiénes somos</a>
+            <a href="/programas" className="hover:text-brand-red">Programas</a>
+            <a href="/transparencia" className="hover:text-brand-red">Transparencia</a>
+            <a href="/contacto" className="hover:text-brand-red">Contacto</a>
+            <a href="/donar" className="btn-primary text-sm tracking-wide shadow-md">Donar ahora</a>
+          </nav>
+
+          <button className="md:hidden p-2 rounded hover:bg-gray-100" aria-label="Abrir menú">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6 text-brand-red">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+            </svg>
+          </button>
         </div>
-        <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
-          <Image src="/hero.jpg" alt="Acciones solidarias de DonaSonrisas" fill className="object-cover" />
+      </header>
+
+      {/* HERO */}
+      <section className="section bg-gradient-to-b from-white to-red-50">
+        <div className="container-app grid gap-10 lg:grid-cols-2 items-center">
+          <div>
+            <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 leading-tight">
+              Ayudemos hoy para <span className="text-brand-red">transformar</span> el mañana
+            </h1>
+            <p className="lead mt-4 text-gray-700 max-w-xl">
+              Tu aporte llega donde más se necesita. Promovemos transparencia, impacto y cercanía en cada acción solidaria.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <a href="/donar" className="btn-primary">Donar ahora</a>
+              <a href="/apadrinar" className="btn-secondary">Apadrinar</a>
+            </div>
+          </div>
+
+          <div className="relative">
+            <img
+              src="/hero.png"
+              alt="Niños felices beneficiados por DonaSonrisas"
+              className="rounded-2xl shadow-lg object-cover w-full h-[380px]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-red-200/30 to-transparent rounded-2xl"></div>
+          </div>
         </div>
       </section>
 
       {/* IMPACTO */}
-      <section className="container mt-16">
-        <h2 className="text-2xl font-semibold mb-6">Nuestro impacto</h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <ImpactCard value="+5,000" label="Niños beneficiados" />
-          <ImpactCard value="120" label="Colegios aliados" />
-          <ImpactCard value="24" label="Regiones atendidas" />
-          <ImpactCard value="100%" label="Transparencia" />
-        </div>
-      </section>
-
-      {/* PROGRAMAS */}
-      <section className="container mt-16">
-        <h2 className="text-2xl font-semibold mb-6">Programas</h2>
-        <div className="grid md:grid-cols-4 gap-6">
-          <ProgramCard href="/programas/ninez" title="Niñez" description="Protección, alimentación y espacios seguros." />
-          <ProgramCard href="/programas/educacion" title="Educación" description="Útiles, talleres y reforzamiento escolar." />
-          <ProgramCard href="/programas/salud" title="Salud" description="Controles, campañas y atención temprana." />
-          <ProgramCard href="/programas/emergencias" title="Emergencias" description="Respuesta rápida y apoyo humanitario." />
-        </div>
-      </section>
-
-      {/* DONACIÓN RÁPIDA */}
-      <section className="container mt-16">
-        <div className="card p-6 md:p-10">
-          <h3 className="text-xl font-semibold">Dona en 1 minuto</h3>
-          <p className="text-gray-600 mt-1">Elegí un monto o ingresa uno libre. Recibirás constancia por e-mail.</p>
-          <div className="mt-6">
-            <DonationWidget />
+      <section className="section">
+        <div className="container-app text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8 text-gray-900">Nuestro impacto</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+            <div><div className="text-4xl font-extrabold text-brand-red">+5,000</div><div className="text-gray-600">Niños beneficiados</div></div>
+            <div><div className="text-4xl font-extrabold text-brand-red">120</div><div className="text-gray-600">Colegios aliados</div></div>
+            <div><div className="text-4xl font-extrabold text-brand-red">24</div><div className="text-gray-600">Regiones atendidas</div></div>
+            <div><div className="text-4xl font-extrabold text-brand-red">100%</div><div className="text-gray-600">Transparencia</div></div>
           </div>
         </div>
       </section>
 
-      {/* HISTORIAS */}
-      <section className="container mt-16">
-        <h2 className="text-2xl font-semibold mb-6">Historias reales</h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          <StoryCard title="Voluntariado en Cusco" excerpt="Más de 200 kits escolares y chequeos de salud." />
-          <StoryCard title="Respuesta a lluvias" excerpt="Albergues temporales y víveres en 48 horas." />
-          <StoryCard title="Programa lectura" excerpt="Clubes de lectura en 15 colegios." />
-        </div>
-      </section>
-
-      {/* TRANSPARENCIA */}
-      <section className="container mt-16">
-        <div className="card p-6 md:p-10">
-          <h3 className="text-xl font-semibold">Transparencia total</h3>
-          <p className="text-gray-600 mt-1">
-            Publicamos reportes, auditorías y el uso de cada donación.
+      {/* TESTIMONIOS */}
+      <section className="section bg-gray-50">
+        <div className="container-app text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-8">Historias que inspiran</h2>
+          <p className="max-w-2xl mx-auto text-gray-700 mb-10">
+            Cada donación cambia una historia. Conoce cómo tus aportes generan impacto real en las comunidades.
           </p>
-          <Link href="/transparencia" className="btn btn-outline mt-4 inline-block">Ver reportes</Link>
-        </div>
-      </section>
 
-      {/* NEWSLETTER */}
-      <section className="container mt-16 mb-20">
-        <div className="card p-6 md:p-10 text-center">
-          <h3 className="text-xl font-semibold">Súmate a la comunidad</h3>
-          <p className="text-gray-600 mt-2">Recibe historias, avances y oportunidades para ayudar.</p>
-          <div className="mt-4 max-w-md mx-auto">
-            <NewsletterForm />
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="card p-6">
+              <p className="text-gray-700 italic">“Gracias a DonaSonrisas, mi hija pudo volver al colegio con todos sus útiles.”</p>
+              <div className="mt-4 font-semibold text-brand-red">María, Madre beneficiaria</div>
+            </div>
+            <div className="card p-6">
+              <p className="text-gray-700 italic">“La transparencia y cercanía de la ONG me motivaron a convertirme en padrino.”</p>
+              <div className="mt-4 font-semibold text-brand-red">Carlos, Donante</div>
+            </div>
+            <div className="card p-6">
+              <p className="text-gray-700 italic">“Ser voluntario me hizo ver cómo la unión puede cambiar vidas.”</p>
+              <div className="mt-4 font-semibold text-brand-red">Lucía, Voluntaria</div>
+            </div>
           </div>
         </div>
       </section>
+
+      {/* FOOTER */}
+      <footer className="border-t bg-white">
+        <div className="container-app py-6 flex flex-col sm:flex-row justify-between items-center text-gray-600 text-sm">
+          <p>© {new Date().getFullYear()} DonaSonrisas · Hecho con ❤️ en Perú</p>
+          <div className="flex gap-4 mt-3 sm:mt-0">
+            <a href="https://wa.me/51997374878" className="hover:text-brand-red">WhatsApp</a>
+            <a href="mailto:donasonrisasperu@gmail.com" className="hover:text-brand-red">Correo</a>
+            <a href="/politicas" className="hover:text-brand-red">Políticas</a>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
