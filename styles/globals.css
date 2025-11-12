@@ -1,7 +1,20 @@
-/* cards & buttons rápidas */
-.card{ @apply rounded-xl border border-gray-200 bg-white; }
-.btn{ @apply inline-flex items-center justify-center rounded-md font-semibold px-4 py-2 transition; }
-.btn-primary{ @apply bg-pink-600 text-white hover:opacity-90; }
-.btn-outline{ @apply border border-pink-600 text-pink-600 hover:bg-pink-50; }
-.input{ @apply w-full rounded-md border border-gray-300 px-3 py-2 outline-none focus:ring-2 focus:ring-pink-400; }
-.container{ @apply mx-auto max-w-7xl px-4 md:px-8; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tipografía y colores base */
+:root {
+  --bg: #ffffff;
+  --fg: #1E1E1E;
+}
+html, body { @apply bg-white text-[var(--fg)] font-sans antialiased; }
+a { @apply text-brand-red hover:underline; }
+
+/* Componentes rápidos */
+.container-app { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+.btn-primary { @apply inline-flex items-center gap-2 rounded-xl2 bg-brand-red text-white px-5 py-3 font-semibold shadow hover:bg-red-700 transition; }
+.btn-secondary { @apply inline-flex items-center gap-2 rounded-xl2 bg-brand-yellow text-brand-dark px-5 py-3 font-semibold shadow hover:brightness-95 transition; }
+.card { @apply rounded-2xl border border-gray-200/70 shadow-sm bg-white; }
+.section { @apply py-10 sm:py-14; }
+.h1 { @apply text-3xl sm:text-5xl font-extrabold tracking-tight; }
+.lead { @apply text-lg text-gray-700; }
