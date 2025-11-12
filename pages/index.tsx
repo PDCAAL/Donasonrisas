@@ -9,12 +9,12 @@ export default function Home() {
         <title>DonaSonrisas | Ayudemos hoy para transformar el mañana</title>
         <meta
           name="description"
-          content="DonaSonrisas es una organización sin fines de lucro que busca llevar alegría, educación y esperanza a los niños que más lo necesitan."
+          content="Tu aporte llega donde más se necesita. DonaSonrisas promueve transparencia, impacto y cercanía para transformar vidas."
         />
-        <link rel="icon" href="/favicon.png" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* HERO PRINCIPAL */}
+      {/* HERO */}
       <section className="relative bg-gradient-to-b from-red-100 to-white py-16 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
           <div className="flex-1">
@@ -34,33 +34,31 @@ export default function Home() {
                 Donar ahora
               </Link>
               <Link
-                href="/apadrinar"
+                href="/quienes-somos"
                 className="bg-white border border-[#b61c1c] text-[#b61c1c] px-6 py-3 rounded-full font-semibold hover:bg-[#fce8e8] transition"
               >
-                Apadrinar
+                Quiénes somos
               </Link>
             </div>
           </div>
 
           <div className="flex-1 flex justify-center">
             <Image
-              src="/hero.png"
-              alt="Niños felices DonaSonrisas"
-              width={500}
+              src="/hero.jpg"
+              alt="Niños felices beneficiados por DonaSonrisas"
+              width={520}
               height={400}
-              className="rounded-2xl shadow-lg"
+              className="rounded-2xl shadow-lg object-cover"
               priority
             />
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN DE IMPACTO */}
+      {/* IMPACTO */}
       <section className="bg-white py-16 border-t">
         <div className="max-w-6xl mx-auto px-6 text-center">
-          <h2 className="text-3xl font-bold text-[#b61c1c] mb-6">
-            Nuestro impacto
-          </h2>
+          <h2 className="text-3xl font-bold text-[#b61c1c] mb-6">Nuestro impacto</h2>
           <p className="text-gray-600 mb-12">
             Gracias a tu ayuda, seguimos llevando alegría a miles de niños y familias en todo el país.
           </p>
@@ -86,7 +84,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SECCIÓN FINAL CTA */}
+      {/* CTA FINAL */}
       <section className="bg-[#b61c1c] text-white py-16">
         <div className="max-w-6xl mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold mb-6">
