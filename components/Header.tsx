@@ -39,7 +39,14 @@ export default function Header({ offsetTop = 0 }: { offsetTop?: number }) {
     >
       <div className="mx-auto max-w-7xl h-20 px-4 md:px-8 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3" aria-label="DonaSonrisas, inicio">
-          <Image src="/logo.png" alt="DonaSonrisas" width={210} height={70} priority className="h-14 w-auto" />
+          <Image
+  src="/logo.png"
+  alt="DonaSonrisas"
+  width={120}   // 45 x 2.5 = 112.5 → redondeamos a 120
+  height={120}
+  className="transition-transform duration-300 hover:scale-105"
+/>
+
         </Link>
 
         {/* Desktop nav */}
