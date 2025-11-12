@@ -11,7 +11,7 @@ export default function Home() {
           name="description"
           content="DonaSonrisas es una organización sin fines de lucro que busca llevar alegría, educación y esperanza a los niños que más lo necesitan."
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       {/* HERO PRINCIPAL */}
@@ -44,7 +44,7 @@ export default function Home() {
 
           <div className="flex-1 flex justify-center">
             <Image
-              src="/hero_donasonrisas.svg"
+              src="/hero.png"
               alt="Niños felices DonaSonrisas"
               width={500}
               height={400}
