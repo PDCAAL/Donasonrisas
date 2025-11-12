@@ -1,43 +1,56 @@
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Header() {
+  // Banner superior (puede ocultarse con la X)
+  const [promoVisible, setPromoVisible] = useState(true);
+
   return (
     <header className="w-full">
-      {/* CONTENEDOR STICKY ÚNICO: promo + nav (sin huecos) */}
+      {/* Sticky ÚNICO: contiene banner + nav para evitar huecos al scrollear */}
       <div className="sticky top-0 z-50">
-        {/* BARRA PROMO (ÚNICA) */}
-        <div className="bg-[#d9443f] text-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 relative flex items-center justify-center">
-            <p className="text-sm font-medium text-center">
-              Dona hoy y multiplica impacto · <span className="font-semibold">Transparencia 100%</span>
-            </p>
+        {/* BANNER SUPERIOR */}
+        {promoVisible && (
+          <div className="bg-[#d9443f] text-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2 relative flex items-center justify-center">
+              <p className="text-sm font-medium text-center">
+                Dona hoy y multiplica impacto · <span className="font-semibold">Transparencia 100%</span>
+              </p>
 
-            {/* WhatsApp (derecha) */}
-            <a
-              href="https://wa.me/51997374878"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="absolute right-3 sm:right-4 bg-white text-[#d9443f] px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-100 transition"
-            >
-              WhatsApp
-            </a>
+              {/* WhatsApp a la derecha */}
+              <a
+                href="https://wa.me/51997374878"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute right-11 sm:right-12 bg-white text-[#d9443f] px-3 py-1 rounded-full text-sm font-semibold hover:bg-gray-100 transition"
+              >
+                WhatsApp
+              </a>
+
+              {/* Botón cerrar (X) */}
+              <button
+                aria-label="Cerrar aviso"
+                onClick={() => setPromoVisible(false)}
+                className="absolute right-2 sm:right-3 rounded-full bg-white/20 hover:bg-white/30 px-2 py-0.5"
+              >
+                ✕
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
-        {/* NAV PRINCIPAL */}
-        <nav className="bg-white border-b shadow-sm">
+        {/* NAV */}
+        <nav className="bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80 border-b shadow-sm">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
-            {/* LOGO (altura controlada para que no se vea enorme) */}
+            {/* LOGO 25% más grande (controlado por h-12 / md:h-14) */}
             <Link href="/" className="flex items-center gap-3">
-              {/* Usa PNG o SVG con fondo transparente */}
               <Image
-                src="/logo.png"   // o "/logo_donasonrisas.svg"
+                src="/logo.png"  // asegúrate que sea PNG/SVG con fondo transparente y recortado
                 alt="DonaSonrisas"
-                width={180}
-                height={180}
-                // Altura real visible controlada por CSS; no se deforma
-                className="h-10 md:h-12 w-auto object-contain select-none"
+                width={140}
+                height={140}
+                className="h-12 md:h-14 w-auto object-contain select-none"
                 priority
               />
               <span className="text-[#b61c1c] font-bold text-lg md:text-xl tracking-wide">
@@ -45,7 +58,6 @@ export default function Header() {
               </span>
             </Link>
 
-            {/* MENÚ */}
             <div className="hidden md:flex items-center gap-6 text-[#8c1a1a] font-medium">
               <Link href="/quienes-somos" className="hover:text-[#b61c1c] transition">Quiénes somos</Link>
               <Link href="/programas" className="hover:text-[#b61c1c] transition">Programas</Link>
@@ -53,7 +65,6 @@ export default function Header() {
               <Link href="/contacto" className="hover:text-[#b61c1c] transition">Contacto</Link>
             </div>
 
-            {/* CTA */}
             <Link
               href="/donar"
               className="bg-[#b61c1c] text-white px-4 py-2 rounded-full shadow-md hover:bg-[#a11313] transition font-semibold"
