@@ -1,5 +1,16 @@
-import styles from '../styles/transparencia.module.css'
+// pages/transparencia.tsx
+import type { NextPage } from 'next'
+import styles from '../styles/transparencia.module.css'  // 👈 ruta y nombre exactos
 
-export default function Transparencia() {
-  return <main className={styles.wrapper}>...</main>
+const Transparencia: NextPage = () => {
+  return (
+    <main className={styles.wrapper}>
+      <h1 className={styles.title}>Transparencia</h1>
+      <p className={styles.text}>
+        Aquí va el contenido de transparencia de DonaSonrisas.
+      </p>
+    </main>
+  )
 }
+
+export default Transparencia
