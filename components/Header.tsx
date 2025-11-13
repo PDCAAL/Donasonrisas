@@ -80,17 +80,166 @@ export default function Header() {
 				  priority
 				/>
 
-              <span className="text-[#b61c1c] font-bold text-lg md:text-xl tracking-wide">
-                DonaSonrisas
-              </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-6 text-[#8c1a1a] font-medium">
-              <Link href="/quienes-somos" className="hover:text-[#b61c1c] transition">Quiénes somos</Link>
-              <Link href="/programas" className="hover:text-[#b61c1c] transition">Programas</Link>
-              <Link href="/transparencia" className="hover:text-[#b61c1c] transition">Transparencia</Link>
-              <Link href="/contacto" className="hover:text-[#b61c1c] transition">Contacto</Link>
-            </div>
+            <div className="hidden md:flex items-center gap-6 text-[#8c1a1a] font-medium relative">
+
+  {/* ACERCA DE – Mega menú estilizado */}
+  <div className="group relative">
+    <button className="inline-flex items-center gap-1 px-2 py-1 rounded-full hover:bg-[#ffe4e0] hover:text-[#b61c1c] transition">
+      Acerca de
+      <span className="text-xs mt-[1px]">▼</span>
+    </button>
+
+    {/* Contenedor mega-menú */}
+    <div
+      className={`
+        invisible opacity-0 translate-y-1
+        group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+        absolute left-1/2 -translate-x-1/2 mt-3
+        w-[860px] max-w-[95vw]
+        bg-[#fff8f8] shadow-xl rounded-2xl border border-[#f5c7c7]
+        transition-all duration-200 ease-out z-40
+      `}
+    >
+      {/* Barra superior decorativa */}
+      <div className="h-1 w-full rounded-t-2xl bg-gradient-to-r from-[#ff7b6a] via-[#ff3b3f] to-[#ff7b6a]" />
+
+      <div className="grid grid-cols-3 gap-6 p-6 text-sm text-[#5c1a1a]">
+
+        {/* Columna 1 – DONASONRISAS */}
+        <div>
+          <div className="mb-3 text-[11px] font-semibold tracking-[0.18em] text-gray-500">
+            DONASONRISAS
+          </div>
+          <ul className="space-y-1.5">
+            <li>
+              <Link href="/quienes-somos" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>¿Quiénes somos?</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/nuestra-historia" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff7b6a]" />
+                <span>Nuestra historia</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/mision-vision" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Misión y visión</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/equipo" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff7b6a]" />
+                <span>Nuestro equipo</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/aliados" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Nuestros aliados</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Columna 2 – CÓMO AYUDAR */}
+        <div>
+          <div className="mb-3 text-[11px] font-semibold tracking-[0.18em] text-gray-500">
+            CÓMO AYUDAR
+          </div>
+          <ul className="space-y-1.5">
+            <li>
+              <Link href="/donar" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Donar una sonrisa</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/apadrinar" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff7b6a]" />
+                <span>Apadrinar una sonrisa</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/voluntariado" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Ser voluntario</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/empresas-solidarias" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff7b6a]" />
+                <span>Empresas solidarias</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/como-ayudar-desde-casa" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Ayudar desde casa</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Columna 3 – TRANSPARENCIA Y ACTUALIDAD */}
+        <div>
+          <div className="mb-3 text-[11px] font-semibold tracking-[0.18em] text-gray-500">
+            TRANSPARENCIA Y ACTUALIDAD
+          </div>
+          <ul className="space-y-1.5">
+            <li>
+              <Link href="/como-usamos-tu-donacion" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>¿Cómo usamos tu donación?</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/reportes-y-resultados" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff7b6a]" />
+                <span>Reportes y resultados</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/documentos-legales" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Documentos legales</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff7b6a]" />
+                <span>Blog y noticias</span>
+              </Link>
+            </li>
+            <li>
+              <Link href="/historias-en-video" className="flex items-start gap-2 hover:text-[#b61c1c]">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#ff3b3f]" />
+                <span>Historias en video</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {/* Resto de enlaces normales del header */}
+  <Link href="/programas" className="hover:text-[#b61c1c] transition">
+    Programas
+  </Link>
+  <Link href="/transparencia" className="hover:text-[#b61c1c] transition">
+    Transparencia
+  </Link>
+  <Link href="/contacto" className="hover:text-[#b61c1c] transition">
+    Contacto
+  </Link>
+</div>
+
 
             <Link
               href="/donar"

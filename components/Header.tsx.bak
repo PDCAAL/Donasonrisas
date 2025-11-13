@@ -74,23 +74,150 @@ export default function Header() {
               <Image
 				  src="/logo.png"
 				  alt="DonaSonrisas"
-				  width={160}
-				  height={160}
-				  className="h-12 md:h-14 w-auto object-contain select-none"
+				  width={200}
+				  height={200}
+				  className="h-[60px] md:h-[70px] w-auto object-contain select-none"
 				  priority
 				/>
 
-              <span className="text-[#b61c1c] font-bold text-lg md:text-xl tracking-wide">
-                DonaSonrisas
-              </span>
             </Link>
 
-            <div className="hidden md:flex items-center gap-6 text-[#8c1a1a] font-medium">
-              <Link href="/quienes-somos" className="hover:text-[#b61c1c] transition">Quiénes somos</Link>
-              <Link href="/programas" className="hover:text-[#b61c1c] transition">Programas</Link>
-              <Link href="/transparencia" className="hover:text-[#b61c1c] transition">Transparencia</Link>
-              <Link href="/contacto" className="hover:text-[#b61c1c] transition">Contacto</Link>
-            </div>
+            <div className="hidden md:flex items-center gap-6 text-[#8c1a1a] font-medium relative">
+  {/* ACERCA DE – Mega menú */}
+  <div className="group relative">
+    <button className="inline-flex items-center gap-1 hover:text-[#b61c1c] transition">
+      Acerca de
+      <span className="text-xs">▼</span>
+    </button>
+
+    {/* Contenedor mega-menú */}
+    <div
+      className="
+        invisible opacity-0 group-hover:visible group-hover:opacity-100
+        absolute left-0 mt-3 w-[720px]
+        bg-white shadow-xl rounded-xl border border-gray-100
+        transition-opacity duration-200
+      "
+    >
+      <div className="grid grid-cols-3 gap-6 p-6 text-sm">
+
+        {/* Columna 1 – DONASONRISAS */}
+        <div>
+          <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-gray-500">
+            DONASONRISAS
+          </div>
+          <ul className="space-y-1">
+            <li>
+              <Link href="/quienes-somos" className="block hover:text-[#b61c1c]">
+                ¿Quiénes somos?
+              </Link>
+            </li>
+            <li>
+              <Link href="/nuestra-historia" className="block hover:text-[#b61c1c]">
+                Nuestra historia
+              </Link>
+            </li>
+            <li>
+              <Link href="/mision-vision" className="block hover:text-[#b61c1c]">
+                Misión y visión
+              </Link>
+            </li>
+            <li>
+              <Link href="/equipo" className="block hover:text-[#b61c1c]">
+                Nuestro equipo
+              </Link>
+            </li>
+            <li>
+              <Link href="/aliados" className="block hover:text-[#b61c1c]">
+                Nuestros aliados
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Columna 2 – CÓMO AYUDAR */}
+        <div>
+          <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-gray-500">
+            CÓMO AYUDAR
+          </div>
+          <ul className="space-y-1">
+            <li>
+              <Link href="/donar" className="block hover:text-[#b61c1c]">
+                Donar una sonrisa
+              </Link>
+            </li>
+            <li>
+              <Link href="/apadrinar" className="block hover:text-[#b61c1c]">
+                Apadrinar una sonrisa
+              </Link>
+            </li>
+            <li>
+              <Link href="/voluntariado" className="block hover:text-[#b61c1c]">
+                Ser voluntario
+              </Link>
+            </li>
+            <li>
+              <Link href="/empresas-solidarias" className="block hover:text-[#b61c1c]">
+                Empresas solidarias
+              </Link>
+            </li>
+            <li>
+              <Link href="/como-ayudar-desde-casa" className="block hover:text-[#b61c1c]">
+                Ayudar desde casa
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Columna 3 – TRANSPARENCIA Y ACTUALIDAD */}
+        <div>
+          <div className="mb-2 text-xs font-semibold tracking-[0.18em] text-gray-500">
+            TRANSPARENCIA Y ACTUALIDAD
+          </div>
+          <ul className="space-y-1">
+            <li>
+              <Link href="/como-usamos-tu-donacion" className="block hover:text-[#b61c1c]">
+                ¿Cómo usamos tu donación?
+              </Link>
+            </li>
+            <li>
+              <Link href="/reportes-y-resultados" className="block hover:text-[#b61c1c]">
+                Reportes y resultados
+              </Link>
+            </li>
+            <li>
+              <Link href="/documentos-legales" className="block hover:text-[#b61c1c]">
+                Documentos legales
+              </Link>
+            </li>
+            <li>
+              <Link href="/blog" className="block hover:text-[#b61c1c]">
+                Blog y noticias
+              </Link>
+            </li>
+            <li>
+              <Link href="/historias-en-video" className="block hover:text-[#b61c1c]">
+                Historias en video
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  {/* El resto de tus links normales */}
+  <Link href="/programas" className="hover:text-[#b61c1c] transition">
+    Programas
+  </Link>
+  <Link href="/transparencia" className="hover:text-[#b61c1c] transition">
+    Transparencia
+  </Link>
+  <Link href="/contacto" className="hover:text-[#b61c1c] transition">
+    Contacto
+  </Link>
+</div>
 
             <Link
               href="/donar"
