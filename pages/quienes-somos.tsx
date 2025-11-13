@@ -54,7 +54,7 @@ export default function QuienesSomosPage() {
 
           <div className="relative w-full h-[260px] md:h-[320px] lg:h-[360px] rounded-3xl overflow-hidden shadow-lg border border-[#ffd6d6] bg-white">
             <Image
-              src="/inicio.png"
+              src="/inicio.jpg"
               alt="Los primeros pasos de DonaSonrisas en 2007"
               fill
               className="object-cover"
