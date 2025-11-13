@@ -5,7 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 
-export default function Header({ showBanner = true }) {
+type HeaderProps = {
+  showBanner?: boolean;
+};
+
+export default function Header({ showBanner = true }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState(false);
 
@@ -20,15 +24,10 @@ export default function Header({ showBanner = true }) {
             Dona hoy y multiplica impacto.{" "}
             <strong>Transparencia 100%.</strong>
           </span>
-
-          <button
-            onClick={() => {}}
-            className="ml-4 text-white/80 hover:text-white"
-          ></button>
         </div>
       )}
 
-      {/* Spacer si el banner está activo */}
+      {/* Espaciador para que el contenido no quede debajo del banner */}
       {showBanner && <div className="h-[40px]" />}
 
       {/* ───────────────────────────────────────────────
@@ -36,54 +35,79 @@ export default function Header({ showBanner = true }) {
       ─────────────────────────────────────────────── */}
       <header className="w-full bg-white shadow-sm fixed left-0 z-40 top-[40px]">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex justify-between items-center">
-
-          {/* 🔴 LOGO +25% */}
-          <Link href="/" className="flex items-center gap-3">
+          {/* 🔴 LOGO (sin texto al costado, más pequeño y con aire) */}
+          <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="DonaSonrisas"
-              width={140}   // ← 25% más grande
-              height={140}
-              className="object-contain"
+              width={120} // tamaño base lógico
+              height={120}
+              className="object-contain h-12 w-auto md:h-14" // altura real en pantalla
             />
-            <span className="text-[#b32424] font-semibold text-xl hidden md:block">
-              DonaSonrisas
-            </span>
           </Link>
 
           {/* ───────────────────────────────
               MENU DESKTOP
           ─────────────────────────────── */}
           <nav className="hidden md:flex items-center gap-8 text-[#7b1d1d] font-medium">
-
-            {/* 🟡 ACERCA DE (mega menú) */}
+            {/* 🟡 ACERCA DE – Mega menú */}
             <div className="relative group">
               <button className="flex items-center gap-1 hover:text-[#c42d2d] transition">
                 Acerca de <FiChevronDown size={14} />
               </button>
 
-              {/* MEGA MENÚ */}
-              <div className="
-                absolute left-1/2 -translate-x-1/2 mt-3
-                invisible opacity-0 translate-y-2 group-hover:visible
-                group-hover:opacity-100 group-hover:translate-y-0
-                transition-all duration-200 
-                w-[880px] bg-[#fff7f7] shadow-xl border border-[#ffd4d4]
-                rounded-2xl p-6 z-30
-              ">
-                <div className="grid grid-cols-3 gap-6 text-sm text-[#5c1a1a]">
-
+              <div
+                className="
+                  absolute left-1/2 -translate-x-1/2 mt-3
+                  invisible opacity-0 translate-y-2
+                  group-hover:visible group-hover:opacity-100 group-hover:translate-y-0
+                  transition-all duration-200
+                  w-[880px] max-w-[95vw]
+                  bg-[#fff7f7] shadow-xl border border-[#ffd4d4]
+                  rounded-2xl p-6 z-30
+                "
+              >
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-[#5c1a1a]">
                   {/* Columna 1 */}
                   <div>
                     <h4 className="text-xs text-gray-500 mb-3 tracking-wide">
                       DONASONRISAS
                     </h4>
                     <ul className="space-y-2">
-                      <li><Link href="/quienes-somos" className="hover:text-[#c42d2d]">¿Quiénes somos?</Link></li>
-                      <li><Link href="/nuestra-historia" className="hover:text-[#c42d2d]">Nuestra historia</Link></li>
-                      <li><Link href="/mision-vision" className="hover:text-[#c42d2d]">Misión y visión</Link></li>
-                      <li><Link href="/equipo" className="hover:text-[#c42d2d]">Nuestro equipo</Link></li>
-                      <li><Link href="/aliados" className="hover:text-[#c42d2d]">Nuestros aliados</Link></li>
+                      <li>
+                        <Link
+                          href="/quienes-somos"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          ¿Quiénes somos?
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/nuestra-historia"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Nuestra historia
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/mision-vision"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Misión y visión
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/equipo" className="hover:text-[#c42d2d]">
+                          Nuestro equipo
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/aliados" className="hover:text-[#c42d2d]">
+                          Nuestros aliados
+                        </Link>
+                      </li>
                     </ul>
                   </div>
 
@@ -93,10 +117,35 @@ export default function Header({ showBanner = true }) {
                       CÓMO AYUDAR
                     </h4>
                     <ul className="space-y-2">
-                      <li><Link href="/donar" className="hover:text-[#c42d2d]">Donar una sonrisa</Link></li>
-                      <li><Link href="/apadrinar" className="hover:text-[#c42d2d]">Apadrinar</Link></li>
-                      <li><Link href="/voluntariado" className="hover:text-[#c42d2d]">Ser voluntario</Link></li>
-                      <li><Link href="/empresas" className="hover:text-[#c42d2d]">Empresas solidarias</Link></li>
+                      <li>
+                        <Link href="/donar" className="hover:text-[#c42d2d]">
+                          Donar una sonrisa
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/apadrinar"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Apadrinar
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/voluntariado"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Ser voluntario
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/empresas"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Empresas solidarias
+                        </Link>
+                      </li>
                     </ul>
                   </div>
 
@@ -106,21 +155,55 @@ export default function Header({ showBanner = true }) {
                       TRANSPARENCIA Y ACTUALIDAD
                     </h4>
                     <ul className="space-y-2">
-                      <li><Link href="/como-usamos-tu-donacion" className="hover:text-[#c42d2d]">¿Cómo usamos tu donación?</Link></li>
-                      <li><Link href="/reportes" className="hover:text-[#c42d2d]">Reportes y resultados</Link></li>
-                      <li><Link href="/documentos" className="hover:text-[#c42d2d]">Documentos legales</Link></li>
-                      <li><Link href="/blog" className="hover:text-[#c42d2d]">Blog</Link></li>
-                      <li><Link href="/videos" className="hover:text-[#c42d2d]">Historias en video</Link></li>
+                      <li>
+                        <Link
+                          href="/como-usamos-tu-donacion"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          ¿Cómo usamos tu donación?
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/reportes"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Reportes y resultados
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          href="/documentos"
+                          className="hover:text-[#c42d2d]"
+                        >
+                          Documentos legales
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/blog" className="hover:text-[#c42d2d]">
+                          Blog
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/videos" className="hover:text-[#c42d2d]">
+                          Historias en video
+                        </Link>
+                      </li>
                     </ul>
                   </div>
-
                 </div>
               </div>
             </div>
 
-            <Link href="/programas" className="hover:text-[#c42d2d]">Programas</Link>
-            <Link href="/transparencia" className="hover:text-[#c42d2d]">Transparencia</Link>
-            <Link href="/contacto" className="hover:text-[#c42d2d]">Contacto</Link>
+            <Link href="/programas" className="hover:text-[#c42d2d]">
+              Programas
+            </Link>
+            <Link href="/transparencia" className="hover:text-[#c42d2d]">
+              Transparencia
+            </Link>
+            <Link href="/contacto" className="hover:text-[#c42d2d]">
+              Contacto
+            </Link>
 
             <Link
               href="/donar"
@@ -148,7 +231,6 @@ export default function Header({ showBanner = true }) {
       {mobileOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
           <div className="bg-white w-[80%] h-full p-6 shadow-xl">
-
             <button
               onClick={() => setMobileOpen(false)}
               className="mb-6 text-[#7b1d1d]"
@@ -157,7 +239,7 @@ export default function Header({ showBanner = true }) {
             </button>
 
             <ul className="space-y-4 text-[#7b1d1d] text-lg">
-              {/* Submenu en acordeón */}
+              {/* Submenú en acordeón */}
               <li>
                 <button
                   className="flex justify-between items-center w-full"
@@ -168,18 +250,34 @@ export default function Header({ showBanner = true }) {
 
                 {mobileSubmenu && (
                   <ul className="pl-4 mt-2 space-y-2 text-base">
-                    <li><Link href="/quienes-somos">¿Quiénes somos?</Link></li>
-                    <li><Link href="/nuestra-historia">Nuestra historia</Link></li>
-                    <li><Link href="/mision-vision">Misión y visión</Link></li>
-                    <li><Link href="/equipo">Nuestro equipo</Link></li>
-                    <li><Link href="/aliados">Nuestros aliados</Link></li>
+                    <li>
+                      <Link href="/quienes-somos">¿Quiénes somos?</Link>
+                    </li>
+                    <li>
+                      <Link href="/nuestra-historia">Nuestra historia</Link>
+                    </li>
+                    <li>
+                      <Link href="/mision-vision">Misión y visión</Link>
+                    </li>
+                    <li>
+                      <Link href="/equipo">Nuestro equipo</Link>
+                    </li>
+                    <li>
+                      <Link href="/aliados">Nuestros aliados</Link>
+                    </li>
                   </ul>
                 )}
               </li>
 
-              <li><Link href="/programas">Programas</Link></li>
-              <li><Link href="/transparencia">Transparencia</Link></li>
-              <li><Link href="/contacto">Contacto</Link></li>
+              <li>
+                <Link href="/programas">Programas</Link>
+              </li>
+              <li>
+                <Link href="/transparencia">Transparencia</Link>
+              </li>
+              <li>
+                <Link href="/contacto">Contacto</Link>
+              </li>
 
               <li>
                 <Link
