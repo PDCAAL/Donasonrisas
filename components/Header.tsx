@@ -72,7 +72,7 @@ export default function Header() {
             {/* LOGO (25% más grande) */}
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/logo_donasonrisas.png" // PNG/SVG recortado y sin fondo
+                src="/logo.png" // PNG/SVG recortado y sin fondo
                 alt="DonaSonrisas"
                 width={160}
                 height={160}

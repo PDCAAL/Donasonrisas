@@ -9,8 +9,8 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 export default function MyApp({ Component, pageProps }: AppProps) {
   const BRAND = {
     name: "DonaSonrisas",
-    site: process.env.NEXT_PUBLIC_SITE_URL || "https://donasonrisas.org",
-    email: "contacto@donasonrisas.org",
+    site: process.env.NEXT_PUBLIC_SITE_URL || "https://donasonrisas.com",
+    email: "contacto@donasonrisas.com",
     phoneHuman: "+51 997 374 878",
     phoneE164: "+51997374878",
     whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || "51997374878"}`,
