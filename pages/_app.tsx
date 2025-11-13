@@ -1,20 +1,16 @@
-// pages/_app.tsx
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import "@/styles/globals.css";
 import Header from "@/components/Header";
+// Si usas Footer / WhatsAppButton, deja las importaciones; si no, quítalas.
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const BRAND = {
     name: "DonaSonrisas",
-    site: process.env.NEXT_PUBLIC_SITE_URL || "https://donasonrisas.com",
-    email: "contacto@donasonrisas.com",
-    phoneHuman: "+51 997 374 878",
-    phoneE164: "+51997374878",
-    whatsapp: `https://wa.me/${process.env.NEXT_PUBLIC_WHATSAPP || "51997374878"}`,
-    title: "DonaSonrisas — Ayudamos a niños y familias con amor y transparencia",
+    site: process.env.NEXT_PUBLIC_SITE_URL || "https://donasonrisas.vercel.app",
+    title: "DonaSonrisas — Ayudemos hoy a transformar el mañana",
     description:
       "Programas de apoyo en niñez, educación, salud y emergencias. Dona, apadrina o súmate como voluntario.",
     ogImage: "/og.jpg",
@@ -32,51 +28,23 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:title" content={BRAND.title} />
         <meta property="og:description" content={BRAND.description} />
         <meta property="og:image" content={BRAND.ogImage} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={BRAND.title} />
-        <meta name="twitter:description" content={BRAND.description} />
-        <meta name="twitter:image" content={BRAND.ogImage} />
-        <link rel="canonical" href={BRAND.site} />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
-
-        {/* JSON-LD Organization */}
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: BRAND.name,
-              url: BRAND.site,
-              email: BRAND.email,
-              contactPoint: [
-                {
-                  "@type": "ContactPoint",
-                  telephone: BRAND.phoneE164,
-                  contactType: "customer support",
-                  areaServed: "PE",
-                  availableLanguage: ["es-PE", "es", "en"],
-                },
-              ],
-            }),
-          }}
-        />
       </Head>
 
-      {/* ÚNICO header sticky (incluye la barra promo + nav) */}
+      {/* Header fijo (banner + nav). Su altura se refleja en --header-h */}
       <Header />
 
-      {/* Contenido de cada página */}
-      <main className="mx-auto max-w-7xl px-4 md:px-8">
+      {/* El contenido se separa usando la altura dinámica del header */}
+      <main
+        className="mx-auto max-w-7xl px-4 md:px-8"
+        style={{ paddingTop: "var(--header-h, 0px)" }}
+      >
         <Component {...pageProps} />
       </main>
 
-      {/* Botón flotante de WhatsApp */}
       <WhatsAppButton />
-
       <Footer brandName={BRAND.name} />
     </div>
   );
