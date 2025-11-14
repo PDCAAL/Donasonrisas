@@ -193,7 +193,7 @@ export default function Header({ showBanner = true }: HeaderProps) {
                       </li>
                       <li>
                         <Link
-                          href="/reportes"
+                          href="/reportes-y-resultados"
                           className="hover:text-[#c42d2d]"
                         >
                           Reportes y resultados
@@ -201,7 +201,7 @@ export default function Header({ showBanner = true }: HeaderProps) {
                       </li>
                       <li>
                         <Link
-                          href="/documentos"
+                          href="/documentos-legales"
                           className="hover:text-[#c42d2d]"
                         >
                           Documentos legales
@@ -213,7 +213,7 @@ export default function Header({ showBanner = true }: HeaderProps) {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/videos" className="hover:text-[#c42d2d]">
+                        <Link href="/historias-en-video" className="hover:text-[#c42d2d]">
                           Historias en video
                         </Link>
                       </li>
@@ -376,6 +376,51 @@ export default function Header({ showBanner = true }: HeaderProps) {
                         onClick={() => setMobileOpen(false)}
                       >
                         Empresas solidarias
+                      </Link>
+                    </li>
+                  </ul>
+                )}
+				
+				{mobileHelpOpen && (
+                  <ul className="pl-4 mt-2 space-y-2 text-base">
+                    <li>
+                      <Link
+                        href="/como-usamos-tu-donacion"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        ¿Cómo usamos tu donación?
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/reportes-y-resultados"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Reportes y resultados
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/documentos-legales"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Documentos legales
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        href="/blog"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Blog
+                      </Link>
+                    </li>
+					<li>
+                      <Link
+                        href="/historias-en-video"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        Historias en video
                       </Link>
                     </li>
                   </ul>
