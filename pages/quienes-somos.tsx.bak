@@ -9,34 +9,37 @@ export default function QuienesSomosPage() {
         <title>¿Quiénes somos? | DonaSonrisas</title>
         <meta
           name="description"
-          content="Conoce la historia, misión, visión, equipo y aliados de DonaSonrisas, una asociación sin fines de lucro que desde 2007 regala sonrisas y esperanza a niñas, niños y familias en situación de vulnerabilidad."
+          content="Conoce la historia, misión y esencia de DonaSonrisas, una asociación sin fines de lucro dedicada desde 2007 a la asistencia social, la educación y la transformación de vidas mediante la solidaridad."
         />
       </Head>
 
       <main className="bg-[#fff9f7] min-h-screen text-[#4a1616] pb-20">
 
-        {/* HERO – Intro general */}
+        {/* HERO – Intro */}
+
         <section className="max-w-6xl mx-auto px-4 lg:px-8 pt-32 pb-14 grid gap-12 lg:grid-cols-[1.15fr,0.85fr] items-center">
           <div>
             <p className="text-sm font-semibold tracking-wide text-[#c42d2d] uppercase mb-2">
-              DONASONRISAS
+              ¿Quiénes somos?
             </p>
 
             <h1 className="text-3xl md:text-4xl font-bold mb-5 text-[#8b1f1f] leading-tight">
-              Somos una comunidad que convierte solidaridad en sonrisas desde 2007.
+              Más que una ayuda: una historia de amor, cercanía y esperanza que
+              empezó en 2007.
             </h1>
 
-            <p className="text-base md:text-lg leading-relaxed mb-4">
-              DonaSonrisas es una asociación civil sin fines de lucro que nace
-              con una convicción clara:{" "}
-              <strong>ningún niño debería perder la esperanza por falta de oportunidades.</strong>
+            <p className="text-base md:text-lg leading-relaxed mb-6">
+              DonaSonrisas es una asociación civil sin fines de lucro creada para
+              servir, acompañar y transformar. Nacimos con una convicción simple:
+              <strong> cuando una sonrisa llega a tiempo, cambia una vida</strong>.
             </p>
 
             <p className="text-base md:text-lg leading-relaxed mb-6">
-              A través de campañas sociales, apoyo educativo, acompañamiento y
-              trabajo en red, buscamos que niñas, niños, adolescentes y familias
-              en situación de vulnerabilidad se sientan vistos, cuidados y
-              protegidos.
+              Desde 2007 hemos caminado junto a niñas, niños, adolescentes, adultos
+              mayores y familias de escasos recursos, brindando apoyo social,
+              educativo y humano. Cada acción, campaña y visita nace desde la
+              cercanía, el respeto y el compromiso transparente de servir a quienes
+              más lo necesitan.
             </p>
 
             <div className="flex flex-wrap gap-3 mt-4">
@@ -47,10 +50,10 @@ export default function QuienesSomosPage() {
                 Donar una sonrisa
               </Link>
               <Link
-                href="#nuestra-historia"
+                href="/apadrinar"
                 className="border border-[#c62828] text-[#c62828] px-6 py-2.5 rounded-full text-sm md:text-base font-semibold hover:bg-[#ffe5e5] transition"
               >
-                Conocer nuestra historia
+                Conocer cómo apadrinar
               </Link>
             </div>
           </div>
@@ -58,261 +61,146 @@ export default function QuienesSomosPage() {
           <div className="relative w-full h-[260px] md:h-[330px] lg:h-[360px] rounded-3xl overflow-hidden shadow-lg border border-[#ffd6d6] bg-white">
             <Image
               src="/inicio.jpg"
-              alt="Primeras campañas de DonaSonrisas"
+              alt="Primeras campañas de DonaSonrisas desde 2007"
               fill
               className="object-cover"
             />
           </div>
         </section>
 
-        {/* ===================== 1. NUESTRA HISTORIA ===================== */}
-        <section
-          id="nuestra-historia"
-          className="max-w-5xl mx-auto px-4 lg:px-0 mt-4 space-y-7"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-2">
-            Nuestra historia
+        {/* HISTORIA */}
+
+        <section className="max-w-4xl mx-auto px-4 space-y-7">
+
+          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-4">
+            Nuestra historia: una sonrisa que despertó muchas más
           </h2>
 
           <p className="leading-relaxed text-base md:text-lg">
-            La historia de DonaSonrisas empieza en el año{" "}
-            <strong>2007</strong>, en una visita sencilla a una comunidad de
-            Lima en la que muchas familias vivían con pocos recursos, pero con
-            una enorme capacidad de soñar.
+            Todo comenzó en el año <strong>2007</strong>, durante una visita
+            sencilla pero transformadora a una comunidad de Lima. No llevábamos
+            grandes recursos ni una organización consolidada: solo juguetes
+            modestos, panetones, chocolate caliente y un profundo deseo de
+            compartir.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            Un pequeño grupo de personas decidió organizar una campaña
-            navideña: llevaron juguetes, panetones, chocolate caliente y, sobre
-            todo, <strong>tiempo para escuchar y compartir</strong>. No había
-            grandes presupuestos ni estructuras formales; había ganas de
-            servir, cuidar y mirar a cada niño a los ojos.
+            Ese día, los cerros se llenaron de risas. Niñas y niños que no esperaban
+            un regalo recibieron algo más valioso: <strong>presencia</strong>,
+            <strong>cariño</strong> y <strong>miradas que reconocían su dignidad</strong>.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            Ese día, los cerros se llenaron de risas. Las niñas y los niños no
-            solo recibieron un regalo: sintieron que alguien había pensado en
-            ellos. Esa respuesta tan genuina fue el punto de partida de algo
-            más grande. Lo que parecía una actividad aislada comenzó a
-            repetirse cada año, sumando voluntarios, aliados y nuevas
-            comunidades.
+            La experiencia fue tan conmovedora que pronto se convirtió en una
+            tradición anual. Cada año crecieron las campañas, las manos que se
+            sumaban, las familias que abrían sus puertas y los corazones que
+            encontraban un motivo para creer.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            Con el tiempo, las campañas se expandieron: apoyo escolar,
-            acompañamiento a familias, visitas a hospitales, actividades
-            culturales, talleres y acciones solidarias en distintas zonas
-            urbano-marginales y rurales. Para dar sostenibilidad y transparencia
-            a este camino, se decidió formalizar el trabajo y{" "}
+            Visitamos zonas urbano-marginales, escuelas rurales, comunidades
+            vulnerables, hospitales y lugares donde un gesto pequeño podía ser la
+            luz de un día difícil. Así, lo que empezó como una campaña navideña se
+            transformó en una misión permanente:
             <strong>
-              constituir a DonaSonrisas como asociación civil sin fines de lucro
+              {" "}acompañar, educar, aliviar, conectar y sembrar esperanza.
             </strong>
-            , con fines claros de asistencia social, beneficencia y educación.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            Hoy, más de una década después, seguimos creyendo en la misma idea
-            que nos vio nacer: <strong>una sonrisa puede cambiar un día; muchas
-            sonrisas pueden cambiar una vida</strong>.
+            Con el tiempo, DonaSonrisas formalizó su compromiso, convirtiéndose en
+            una asociación civil sin fines de lucro inscrita conforme a ley
+            y orientada específicamente a fines de asistencia social, beneficencia
+            y educación, tal como establece su Estatuto. :contentReference[oaicite:1]{index=1}
           </p>
         </section>
 
-        {/* ===================== 2. MISIÓN Y VISIÓN ===================== */}
-        <section
-          id="mision-vision"
-          className="max-w-6xl mx-auto px-4 lg:px-8 mt-16"
-        >
+        {/* SECCIÓN: FINES – Basado en Artículo 5° del Estatuto */}
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-14">
           <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-6">
-            Misión y visión
+            Nuestros fines
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* Misión */}
+          <div className="grid md:grid-cols-2 gap-6">
+
+            {/* FIN 1 */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#fde0e0]">
-              <h3 className="font-semibold text-xl text-[#8b1f1f] mb-3">
-                Nuestra misión
+              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
+                Asistencia social y beneficencia
               </h3>
-              <p className="text-sm md:text-base leading-relaxed">
-                Promover, desarrollar y ejecutar acciones de{" "}
-                <strong>asistencia social, beneficencia y educación</strong> que
-                brinden apoyo integral a niñas, niños, adolescentes, adultos
-                mayores y familias de escasos recursos, generando entornos más
-                justos, protectores y llenos de esperanza.
-              </p>
-              <p className="text-sm md:text-base leading-relaxed mt-3">
-                Lo hacemos poniendo en el centro a las personas, respetando su
-                dignidad y trabajando con transparencia, cercanía y calidez
-                humana.
+              <p className="text-sm leading-relaxed">
+                Brindamos apoyo gratuito a personas en situación de necesidad:
+                pobreza, pobreza extrema o carencia de medios, priorizando niñas,
+                niños, adolescentes, adultos mayores y familias vulnerables.  
+                Basado en el Artículo 5 del Estatuto. :contentReference[oaicite:2]{index=2}
               </p>
             </div>
 
-            {/* Visión */}
+            {/* FIN 2 */}
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#fde0e0]">
-              <h3 className="font-semibold text-xl text-[#8b1f1f] mb-3">
-                Nuestra visión
+              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
+                Educación y desarrollo humano
               </h3>
-              <p className="text-sm md:text-base leading-relaxed">
-                Ser una organización referente en el país por{" "}
-                <strong>su impacto real en la vida de niñas y niños</strong>,
-                su modelo de trabajo cercano a las comunidades y su
-                <strong> transparencia en el uso de los recursos</strong>.
-              </p>
-              <p className="text-sm md:text-base leading-relaxed mt-3">
-                Soñamos con un Perú donde cada niño y niña pueda crecer con
-                oportunidades, protegido, amado y con motivos para sonreír,
-                sabiendo que no está solo.
+              <p className="text-sm leading-relaxed">
+                Promovemos la formación integral y el desarrollo de potencialidades
+                de niñas, niños y jóvenes mediante orientación, talleres, lectura,
+                capacitación y programas educativos gratuitos.  
+                Derivado del Artículo 5 del Estatuto. :contentReference[oaicite:3]{index=3}
               </p>
             </div>
           </div>
         </section>
 
-        {/* ===================== 3. NUESTRO EQUIPO ===================== */}
-        <section
-          id="nuestro-equipo"
-          className="max-w-6xl mx-auto px-4 lg:px-8 mt-16"
-        >
+        {/* SECCIÓN: CÓMO LO HACEMOS – Basado en Artículo 6° */}
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-14">
           <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-6">
-            Nuestro equipo
+            ¿Cómo cumplimos nuestra misión?
           </h2>
-
-          <p className="leading-relaxed text-base md:text-lg mb-6 max-w-4xl">
-            DonaSonrisas está formada por personas que comparten un mismo
-            propósito:{" "}
-            <strong>poner sus talentos y su tiempo al servicio de los demás</strong>.
-            Nuestro equipo combina experiencia profesional, corazón y
-            compromiso con la infancia.
-          </p>
 
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Dirección y coordinación
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#ffe0e0]">
+              <h3 className="font-semibold text-lg mb-2 text-[#8b1f1f]">
+                Programas sociales
               </h3>
               <p className="text-sm leading-relaxed">
-                Lideran la estrategia, el desarrollo de programas y la
-                articulación con comunidades, voluntariado y aliados, velando
-                porque cada acción responda a nuestra misión y a nuestros
-                valores.
+                Ejecutamos campañas navideñas, apoyo alimentario, asistencia en
+                emergencias y proyectos de desarrollo humano en alianza con
+                instituciones públicas y privadas.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Equipo operativo y logístico
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#ffe0e0]">
+              <h3 className="font-semibold text-lg mb-2 text-[#8b1f1f]">
+                Educación y talleres
               </h3>
               <p className="text-sm leading-relaxed">
-                Organiza campañas, coordina visitas, gestiona donaciones,
-                implementa actividades educativas y se asegura de que la ayuda
-                llegue a quienes más la necesitan, de forma ordenada y segura.
+                Realizamos talleres, conferencias, cursos y proyectos educativos en
+                escuelas urbano-marginales y rurales, promoviendo habilidades,
+                lectura y formación ciudadana.
               </p>
             </div>
 
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Voluntariado
+            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#ffe0e0]">
+              <h3 className="font-semibold text-lg mb-2 text-[#8b1f1f]">
+                Acompañamiento humano
               </h3>
               <p className="text-sm leading-relaxed">
-                Son el corazón visible de DonaSonrisas: acompañan, juegan,
-                escuchan, enseñan, cargan cajas, pintan murales y están donde
-                hace falta una mano amiga y una sonrisa.
-              </p>
-            </div>
-          </div>
-
-          <p className="leading-relaxed text-sm md:text-base mt-6 max-w-3xl">
-            Si quieres formar parte de este equipo y sumar desde tus
-            habilidades, puedes escribirnos a través de nuestro{" "}
-            <Link
-              href="/contacto"
-              className="text-[#c62828] font-semibold underline-offset-2 hover:underline"
-            >
-              formulario de contacto
-            </Link>{" "}
-            o por nuestras redes sociales.
-          </p>
-        </section>
-
-        {/* ===================== 4. NUESTROS ALIADOS ===================== */}
-        <section
-          id="nuestros-aliados"
-          className="max-w-6xl mx-auto px-4 lg:px-8 mt-16"
-        >
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-6">
-            Nuestros aliados
-          </h2>
-
-          <p className="leading-relaxed text-base md:text-lg mb-6 max-w-4xl">
-            A lo largo de nuestra trayectoria, distintas personas, familias,
-            empresas, instituciones educativas y organizaciones han confiado en
-            DonaSonrisas para canalizar su ayuda hacia quienes más lo
-            necesitan. Gracias a ellos, hemos podido llegar más lejos y
-            transformar más vidas.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Familias y donantes individuales
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Personas que, de forma anónima o recurrente, donan recursos,
-                productos, tiempo o habilidades para que nuestras campañas se
-                hagan realidad.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Colegios y comunidades educativas
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Instituciones que organizan colectas, actividades solidarias y
-                voluntariados estudiantiles para apoyar nuestros programas
-                sociales y educativos.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Empresas con propósito
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Emprendimientos y compañías que aportan recursos, servicios o
-                productos y que ven en la responsabilidad social una forma real
-                de generar impacto positivo.
+                Visitamos comunidades, hospitales y familias escuchando,
+                acompañando y llevando cercanía, alegría y soporte emocional.
               </p>
             </div>
           </div>
-
-          <p className="leading-relaxed text-sm md:text-base mt-6 max-w-3xl">
-            Si tu organización desea convertirse en aliada de DonaSonrisas,
-            estaremos encantados de conversar. Puedes escribirnos a{" "}
-            <a
-              href="mailto:contacto@donasonrisas.org"
-              className="text-[#c62828] font-semibold underline-offset-2 hover:underline"
-            >
-              contacto@donasonrisas.org
-            </a>{" "}
-            o completar el formulario en nuestra página de{" "}
-            <Link
-              href="/contacto"
-              className="text-[#c62828] font-semibold underline-offset-2 hover:underline"
-            >
-              contacto
-            </Link>
-            .
-          </p>
         </section>
 
         {/* CTA FINAL */}
-        <section className="max-w-4xl mx-auto px-4 mt-16 text-center">
+        <section className="max-w-4xl mx-auto px-4 mt-14 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-4">
-            Sigamos regalando sonrisas juntos
+            Ayúdanos a seguir escribiendo esta historia
           </h2>
           <p className="leading-relaxed mb-6">
-            Cada campaña, cada cuaderno entregado y cada abrazo compartido es
-            posible gracias a una red de personas que creen que la solidaridad
-            cambia historias. Tú también puedes ser parte.
+            Cada sonrisa que entregamos es posible gracias a personas como tú.
+            Tu ayuda se transforma en momentos, aprendizajes y esperanza para
+            quienes más lo necesitan.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
@@ -323,10 +211,10 @@ export default function QuienesSomosPage() {
               Donar ahora
             </Link>
             <Link
-              href="/como-ayudar"
+              href="/contacto"
               className="border border-[#c62828] text-[#c62828] px-6 py-2.5 rounded-full font-semibold hover:bg-[#ffe5e5] transition"
             >
-              Ver formas de ayudar
+              Contactar
             </Link>
           </div>
         </section>

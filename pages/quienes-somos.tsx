@@ -6,215 +6,140 @@ export default function QuienesSomosPage() {
   return (
     <>
       <Head>
-        <title>¿Quiénes somos? | DonaSonrisas</title>
+        <title>Quiénes somos | DonaSonrisas</title>
         <meta
           name="description"
-          content="Conoce la historia, misión y esencia de DonaSonrisas, una asociación sin fines de lucro dedicada desde 2007 a la asistencia social, la educación y la transformación de vidas mediante la solidaridad."
+          content="Conoce quiénes somos en DonaSonrisas: una asociación civil sin fines de lucro que busca llevar esperanza, acompañamiento y sonrisas a niñas, niños, familias y adultos mayores en situación de vulnerabilidad."
         />
       </Head>
 
       <main className="bg-[#fff9f7] min-h-screen text-[#4a1616] pb-20">
-
-        {/* HERO – Intro */}
-
-        <section className="max-w-6xl mx-auto px-4 lg:px-8 pt-32 pb-14 grid gap-12 lg:grid-cols-[1.15fr,0.85fr] items-center">
+        {/* HERO */}
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 pt-32 pb-14 grid gap-10 lg:grid-cols-[1.2fr,0.8fr] items-center">
           <div>
-            <p className="text-sm font-semibold tracking-wide text-[#c42d2d] uppercase mb-2">
+            <p className="text-xs font-semibold tracking-[0.15em] text-[#c42d2d] uppercase mb-2">
+              DONASONRISAS
+            </p>
+            <h1 className="text-3xl md:text-4xl font-bold text-[#8b1f1f] mb-4">
               ¿Quiénes somos?
-            </p>
-
-            <h1 className="text-3xl md:text-4xl font-bold mb-5 text-[#8b1f1f] leading-tight">
-              Más que una ayuda: una historia de amor, cercanía y esperanza que
-              empezó en 2007.
             </h1>
-
-            <p className="text-base md:text-lg leading-relaxed mb-6">
-              DonaSonrisas es una asociación civil sin fines de lucro creada para
-              servir, acompañar y transformar. Nacimos con una convicción simple:
-              <strong> cuando una sonrisa llega a tiempo, cambia una vida</strong>.
+            <p className="text-base md:text-lg leading-relaxed mb-3">
+              Somos una <strong>asociación civil sin fines de lucro</strong> que
+              nació del deseo sencillo de regalar sonrisas a niñas, niños y
+              familias que viven en contextos de vulnerabilidad.
             </p>
-
-            <p className="text-base md:text-lg leading-relaxed mb-6">
-              Desde 2007 hemos caminado junto a niñas, niños, adolescentes, adultos
-              mayores y familias de escasos recursos, brindando apoyo social,
-              educativo y humano. Cada acción, campaña y visita nace desde la
-              cercanía, el respeto y el compromiso transparente de servir a quienes
-              más lo necesitan.
+            <p className="text-base md:text-lg leading-relaxed">
+              Desde el año <strong>2007</strong> organizamos campañas y
+              programas que buscan aliviar necesidades concretas —como abrigo,
+              alimentación, útiles escolares o atención médica— y, sobre todo,
+              recordar a cada persona que <strong>no está sola</strong>.
             </p>
-
-            <div className="flex flex-wrap gap-3 mt-4">
-              <Link
-                href="/donar"
-                className="bg-[#c62828] text-white px-6 py-2.5 rounded-full text-sm md:text-base font-semibold hover:bg-[#a91f1f] transition"
-              >
-                Donar una sonrisa
-              </Link>
-              <Link
-                href="/apadrinar"
-                className="border border-[#c62828] text-[#c62828] px-6 py-2.5 rounded-full text-sm md:text-base font-semibold hover:bg-[#ffe5e5] transition"
-              >
-                Conocer cómo apadrinar
-              </Link>
-            </div>
           </div>
 
           <div className="relative w-full h-[260px] md:h-[330px] lg:h-[360px] rounded-3xl overflow-hidden shadow-lg border border-[#ffd6d6] bg-white">
             <Image
-              src="/inicio.jpg"
-              alt="Primeras campañas de DonaSonrisas desde 2007"
+              src="/inicio.jpg"       // recuerda: tu imagen se llama inicio.jpg
+              alt="Primeros años de DonaSonrisas"
               fill
               className="object-cover"
             />
           </div>
         </section>
 
-        {/* HISTORIA */}
-
-        <section className="max-w-4xl mx-auto px-4 space-y-7">
-
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-4">
-            Nuestra historia: una sonrisa que despertó muchas más
-          </h2>
-
+        {/* QUIÉNES SOMOS – TEXTO CENTRAL */}
+        <section className="max-w-5xl mx-auto px-4 lg:px-0 space-y-6">
           <p className="leading-relaxed text-base md:text-lg">
-            Todo comenzó en el año <strong>2007</strong>, durante una visita
-            sencilla pero transformadora a una comunidad de Lima. No llevábamos
-            grandes recursos ni una organización consolidada: solo juguetes
-            modestos, panetones, chocolate caliente y un profundo deseo de
-            compartir.
+            DonaSonrisas está formada por personas que creen en el poder de los
+            gestos simples: una visita, una canasta de víveres, una mochila
+            lista para empezar el colegio, un juguete en Navidad, una charla o
+            una palabra de aliento. Cada acción es una oportunidad para
+            devolverle esperanza a alguien.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            Ese día, los cerros se llenaron de risas. Niñas y niños que no esperaban
-            un regalo recibieron algo más valioso: <strong>presencia</strong>,
-            <strong>cariño</strong> y <strong>miradas que reconocían su dignidad</strong>.
+            Trabajamos con <strong>niñas, niños, adolescentes, adultos mayores</strong> y
+            familias de escasos recursos. Nos enfocamos en comunidades donde la
+            pobreza, la enfermedad o la falta de oportunidades golpean con más
+            fuerza, y allí tratamos de ser un puente entre las necesidades y
+            las personas o instituciones que desean ayudar.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            La experiencia fue tan conmovedora que pronto se convirtió en una
-            tradición anual. Cada año crecieron las campañas, las manos que se
-            sumaban, las familias que abrían sus puertas y los corazones que
-            encontraban un motivo para creer.
+            Como asociación, nos rigen estatutos que nos orientan a realizar{" "}
+            <strong>actividades de asistencia social, beneficencia y educación</strong>,
+            siempre con especial cuidado por la{" "}
+            <strong>transparencia</strong> en el uso de los recursos y el
+            respeto por la dignidad de cada persona.
           </p>
 
           <p className="leading-relaxed text-base md:text-lg">
-            Visitamos zonas urbano-marginales, escuelas rurales, comunidades
-            vulnerables, hospitales y lugares donde un gesto pequeño podía ser la
-            luz de un día difícil. Así, lo que empezó como una campaña navideña se
-            transformó en una misión permanente:
-            <strong>
-              {" "}acompañar, educar, aliviar, conectar y sembrar esperanza.
-            </strong>
-          </p>
-
-          <p className="leading-relaxed text-base md:text-lg">
-            Con el tiempo, DonaSonrisas formalizó su compromiso, convirtiéndose en
-            una asociación civil sin fines de lucro inscrita conforme a ley
-            y orientada específicamente a fines de asistencia social, beneficencia
-            y educación, tal como establece su Estatuto. :contentReference[oaicite:1]{index=1}
+            Creemos que una ayuda bien organizada puede cambiar la historia de
+            una familia y, al mismo tiempo, transformar el corazón de quien
+            decide involucrarse. Por eso, más que una institución, buscamos ser
+            una <strong>comunidad de personas solidarias</strong> que se
+            acompañan mutuamente.
           </p>
         </section>
 
-        {/* SECCIÓN: FINES – Basado en Artículo 5° del Estatuto */}
-        <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-6">
-            Nuestros fines
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {/* FIN 1 */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#fde0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Asistencia social y beneficencia
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Brindamos apoyo gratuito a personas en situación de necesidad:
-                pobreza, pobreza extrema o carencia de medios, priorizando niñas,
-                niños, adolescentes, adultos mayores y familias vulnerables.  
-                Basado en el Artículo 5 del Estatuto. :contentReference[oaicite:2]{index=2}
-              </p>
-            </div>
-
-            {/* FIN 2 */}
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#fde0e0]">
-              <h3 className="font-semibold text-lg text-[#8b1f1f] mb-2">
-                Educación y desarrollo humano
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Promovemos la formación integral y el desarrollo de potencialidades
-                de niñas, niños y jóvenes mediante orientación, talleres, lectura,
-                capacitación y programas educativos gratuitos.  
-                Derivado del Artículo 5 del Estatuto. :contentReference[oaicite:3]{index=3}
-              </p>
-            </div>
+        {/* BLOQUE DE PILLARS */}
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-12 grid md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
+            <h2 className="font-semibold text-lg text-[#8b1f1f] mb-2">
+              Lo que nos mueve
+            </h2>
+            <p className="text-sm leading-relaxed">
+              Servir con alegría, cuidar a los más vulnerables y demostrar con
+              acciones que la solidaridad sigue siendo posible.
+            </p>
           </div>
-        </section>
 
-        {/* SECCIÓN: CÓMO LO HACEMOS – Basado en Artículo 6° */}
-        <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-14">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-6">
-            ¿Cómo cumplimos nuestra misión?
-          </h2>
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
+            <h2 className="font-semibold text-lg text-[#8b1f1f] mb-2">
+              Cómo trabajamos
+            </h2>
+            <p className="text-sm leading-relaxed">
+              Planificamos campañas y programas, coordinamos con líderes
+              locales, colegios y otras organizaciones, y buscamos que cada
+              donación llegue a donde realmente se necesita.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg mb-2 text-[#8b1f1f]">
-                Programas sociales
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Ejecutamos campañas navideñas, apoyo alimentario, asistencia en
-                emergencias y proyectos de desarrollo humano en alianza con
-                instituciones públicas y privadas.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg mb-2 text-[#8b1f1f]">
-                Educación y talleres
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Realizamos talleres, conferencias, cursos y proyectos educativos en
-                escuelas urbano-marginales y rurales, promoviendo habilidades,
-                lectura y formación ciudadana.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-2xl shadow-sm border border-[#ffe0e0]">
-              <h3 className="font-semibold text-lg mb-2 text-[#8b1f1f]">
-                Acompañamiento humano
-              </h3>
-              <p className="text-sm leading-relaxed">
-                Visitamos comunidades, hospitales y familias escuchando,
-                acompañando y llevando cercanía, alegría y soporte emocional.
-              </p>
-            </div>
+          <div className="bg-white rounded-2xl p-6 shadow-sm border border-[#ffe0e0]">
+            <h2 className="font-semibold text-lg text-[#8b1f1f] mb-2">
+              Lo que ofrecemos
+            </h2>
+            <p className="text-sm leading-relaxed">
+              Espacios de encuentro, contención, aprendizaje y celebración,
+              donde las sonrisas sean el lenguaje principal y la esperanza, el
+              resultado natural.
+            </p>
           </div>
         </section>
 
         {/* CTA FINAL */}
         <section className="max-w-4xl mx-auto px-4 mt-14 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-4">
-            Ayúdanos a seguir escribiendo esta historia
+          <h2 className="text-2xl md:text-3xl font-bold text-[#8b1f1f] mb-3">
+            Una sonrisa puede cambiar un día,
+            <br className="hidden sm:block" /> muchas sonrisas pueden cambiar
+            una vida.
           </h2>
-          <p className="leading-relaxed mb-6">
-            Cada sonrisa que entregamos es posible gracias a personas como tú.
-            Tu ayuda se transforma en momentos, aprendizajes y esperanza para
-            quienes más lo necesitan.
+          <p className="leading-relaxed mb-6 text-sm md:text-base">
+            Si quieres conocer más sobre cómo empezó todo, nuestra misión y
+            visión, o cómo puedes sumarte, te invitamos a seguir explorando.
           </p>
 
           <div className="flex flex-wrap justify-center gap-3">
             <Link
-              href="/donar"
-              className="bg-[#c62828] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#a91f1f] transition"
-            >
-              Donar ahora
-            </Link>
-            <Link
-              href="/contacto"
+              href="/nuestra-historia"
               className="border border-[#c62828] text-[#c62828] px-6 py-2.5 rounded-full font-semibold hover:bg-[#ffe5e5] transition"
             >
-              Contactar
+              Ver nuestra historia
+            </Link>
+            <Link
+              href="/mision-y-vision"
+              className="bg-[#c62828] text-white px-6 py-2.5 rounded-full font-semibold hover:bg-[#a91f1f] transition"
+            >
+              Misión y visión
             </Link>
           </div>
         </section>
