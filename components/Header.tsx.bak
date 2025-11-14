@@ -11,10 +11,13 @@ type HeaderProps = {
 
 export default function Header({ showBanner = true }: HeaderProps) {
   // Estado interno del banner (para poder cerrarlo con la X)
+export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
-const [mobileHelpOpen, setMobileHelpOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobileHelpOpen, setMobileHelpOpen] = useState(false);
 
+  // ⭐ ESTA LÍNEA ES LA QUE TE FALTA
+  const [bannerVisible, setBannerVisible] = useState(true);
 
   return (
     <>
