@@ -11,9 +11,10 @@ type HeaderProps = {
 
 export default function Header({ showBanner = true }: HeaderProps) {
   // Estado interno del banner (para poder cerrarlo con la X)
-  const [bannerVisible, setBannerVisible] = useState(showBanner);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileSubmenu, setMobileSubmenu] = useState(false);
+const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+const [mobileHelpOpen, setMobileHelpOpen] = useState(false);
+
 
   return (
     <>
@@ -125,43 +126,35 @@ export default function Header({ showBanner = true }: HeaderProps) {
                     </ul>
                   </div>
 
-                  {/* Columna 2 */}
-                  <div>
-                    <h4 className="text-xs text-gray-500 mb-3 tracking-wide">
-                      CÓMO AYUDAR
-                    </h4>
-                    <ul className="space-y-2">
-                      <li>
-                        <Link href="/donar" className="hover:text-[#c42d2d]">
-                          Donar una sonrisa
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/apadrinar"
-                          className="hover:text-[#c42d2d]"
-                        >
-                          Apadrinar
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/voluntariado"
-                          className="hover:text-[#c42d2d]"
-                        >
-                          Ser voluntario
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          href="/empresas"
-                          className="hover:text-[#c42d2d]"
-                        >
-                          Empresas solidarias
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+                  {/* Columna CÓMO AYUDAR dentro del mega-menú */}
+					<div>
+					  <h3 className="text-xs tracking-[0.18em] text-[#5c6670] font-semibold uppercase mb-3">
+						CÓMO AYUDAR
+					  </h3>
+					  <ul className="space-y-2 text-sm">
+						<li>
+						  <Link href="/donar-una-sonrisa" className="hover:text-[#a91f1f]">
+							Donar una sonrisa
+						  </Link>
+						</li>
+						<li>
+						  <Link href="/apadrinar" className="hover:text-[#a91f1f]">
+							Apadrinar
+						  </Link>
+						</li>
+						<li>
+						  <Link href="/ser-voluntario" className="hover:text-[#a91f1f]">
+							Ser voluntario
+						  </Link>
+						</li>
+						<li>
+						  <Link href="/empresas-solidarias" className="hover:text-[#a91f1f]">
+							Empresas solidarias
+						  </Link>
+						</li>
+					  </ul>
+					</div>
+
 
                   {/* Columna 3 */}
                   <div>
@@ -243,68 +236,139 @@ export default function Header({ showBanner = true }: HeaderProps) {
           PANEL MOBILE
       ───────────────────────────────────────────── */}
       {mobileOpen && (
-        <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
-          <div className="bg-white w-[80%] h-full p-6 shadow-xl">
-            <button
-              onClick={() => setMobileOpen(false)}
-              className="mb-6 text-[#7b1d1d]"
-            >
-              <FiX size={30} />
-            </button>
+  <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
+    <div className="bg-white w-[80%] max-w-xs h-full p-6 shadow-xl overflow-y-auto">
+      <button
+        onClick={() => setMobileOpen(false)}
+        className="mb-6 text-[#7b1d1d]"
+        aria-label="Cerrar menú"
+      >
+        <FiX size={30} />
+      </button>
 
-            <ul className="space-y-4 text-[#7b1d1d] text-lg">
-              {/* Submenú en acordeón */}
+      <ul className="space-y-4 text-[#7b1d1d] text-lg">
+        {/* Acerca de / DonaSonrisas */}
+        <li>
+          <button
+            className="flex justify-between items-center w-full"
+            onClick={() => setMobileAboutOpen((prev) => !prev)}
+          >
+            DonaSonrisas
+            <FiChevronDown
+              className={`transition-transform ${
+                mobileAboutOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {mobileAboutOpen && (
+            <ul className="pl-4 mt-2 space-y-2 text-base">
               <li>
-                <button
-                  className="flex justify-between items-center w-full"
-                  onClick={() => setMobileSubmenu(!mobileSubmenu)}
-                >
-                  Acerca de <FiChevronDown />
-                </button>
-
-                {mobileSubmenu && (
-                  <ul className="pl-4 mt-2 space-y-2 text-base">
-                    <li>
-                      <Link href="/quienes-somos">¿Quiénes somos?</Link>
-                    </li>
-                    <li>
-                      <Link href="/nuestra-historia">Nuestra historia</Link>
-                    </li>
-                    <li>
-                      <Link href="/mision-y-vision">Misión y visión</Link>
-                    </li>
-                    <li>
-                      <Link href="/nuestro-equipo">Nuestro equipo</Link>
-                    </li>
-                    <li>
-                      <Link href="/nuestros-aliados">Nuestros aliados</Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-
-              <li>
-                <Link href="/programas">Programas</Link>
+                <Link href="/quienes-somos" onClick={() => setMobileOpen(false)}>
+                  ¿Quiénes somos?
+                </Link>
               </li>
               <li>
-                <Link href="/transparencia">Transparencia</Link>
+                <Link href="/nuestra-historia" onClick={() => setMobileOpen(false)}>
+                  Nuestra historia
+                </Link>
               </li>
               <li>
-                <Link href="/contacto">Contacto</Link>
+                <Link href="/mision-y-vision" onClick={() => setMobileOpen(false)}>
+                  Misión y visión
+                </Link>
               </li>
-
               <li>
-                <Link
-                  href="/donar"
-                  className="inline-block bg-[#c62828] text-white px-5 py-2 rounded-full"
-                >
-                  Donar ahora
+                <Link href="/nuestro-equipo" onClick={() => setMobileOpen(false)}>
+                  Nuestro equipo
+                </Link>
+              </li>
+              <li>
+                <Link href="/nuestros-aliados" onClick={() => setMobileOpen(false)}>
+                  Nuestros aliados
                 </Link>
               </li>
             </ul>
-          </div>
-        </div>
-      )}
+          )}
+        </li>
+
+        {/* CÓMO AYUDAR */}
+        <li>
+          <button
+            className="flex justify-between items-center w-full"
+            onClick={() => setMobileHelpOpen((prev) => !prev)}
+          >
+            Cómo ayudar
+            <FiChevronDown
+              className={`transition-transform ${
+                mobileHelpOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+
+          {mobileHelpOpen && (
+            <ul className="pl-4 mt-2 space-y-2 text-base">
+              <li>
+                <Link
+                  href="/donar-una-sonrisa"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Donar una sonrisa
+                </Link>
+              </li>
+              <li>
+                <Link href="/apadrinar" onClick={() => setMobileOpen(false)}>
+                  Apadrinar
+                </Link>
+              </li>
+              <li>
+                <Link href="/ser-voluntario" onClick={() => setMobileOpen(false)}>
+                  Ser voluntario
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/empresas-solidarias"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Empresas solidarias
+                </Link>
+              </li>
+            </ul>
+          )}
+        </li>
+
+        {/* Resto de opciones simples */}
+        <li>
+          <Link href="/programas" onClick={() => setMobileOpen(false)}>
+            Programas
+          </Link>
+        </li>
+        <li>
+          <Link href="/transparencia" onClick={() => setMobileOpen(false)}>
+            Transparencia
+          </Link>
+        </li>
+        <li>
+          <Link href="/contacto" onClick={() => setMobileOpen(false)}>
+            Contacto
+          </Link>
+        </li>
+
+        <li>
+          <Link
+            href="/donar"
+            onClick={() => setMobileOpen(false)}
+            className="inline-block bg-[#c62828] text-white px-5 py-2 rounded-full"
+          >
+            Donar ahora
+          </Link>
+        </li>
+      </ul>
+    </div>
+  </div>
+)}
+
     </>
   );
 }
