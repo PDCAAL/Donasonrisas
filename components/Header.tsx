@@ -238,7 +238,7 @@ export default function Header() {
       {/* ─────────────────────────────────────────────
           PANEL MOBILE
       ───────────────────────────────────────────── */}
-      mobileOpen && (
+      {mobileOpen && (
   <div className="fixed inset-0 bg-black/50 z-50 md:hidden">
     <div className="bg-white w-[80%] max-w-xs h-full p-6 shadow-xl overflow-y-auto">
       <button
@@ -371,7 +371,5 @@ export default function Header() {
     </div>
   </div>
 )}
-
-    </>
   );
 }
