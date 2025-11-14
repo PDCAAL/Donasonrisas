@@ -10,39 +10,53 @@ type HeaderProps = {
 };
 
 export default function Header({ showBanner = true }: HeaderProps) {
+  // Estado interno del banner (para poder cerrarlo con la X)
+  const [bannerVisible, setBannerVisible] = useState(showBanner);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileSubmenu, setMobileSubmenu] = useState(false);
 
   return (
     <>
       {/* ───────────────────────────────────────────────
-          🔶 BANNER SUPERIOR (opcional)
+          🔶 BANNER SUPERIOR (cerrable con X)
       ─────────────────────────────────────────────── */}
-      {showBanner && (
-        <div className="w-full bg-[#d64545] text-white text-sm py-2 fixed top-0 left-0 z-50 flex justify-center items-center">
-          <span>
+      {bannerVisible && (
+        <div className="w-full bg-[#d64545] text-white text-sm py-2 fixed top-0 left-0 z-50 flex justify-center items-center px-4">
+          <span className="text-center">
             Dona hoy y multiplica impacto.{" "}
             <strong>Transparencia 100%.</strong>
           </span>
+
+          <button
+            aria-label="Cerrar banner"
+            onClick={() => setBannerVisible(false)}
+            className="ml-4 text-white/80 hover:text-white text-lg font-bold"
+          >
+            ×
+          </button>
         </div>
       )}
 
       {/* Espaciador para que el contenido no quede debajo del banner */}
-      {showBanner && <div className="h-[40px]" />}
+      {bannerVisible && <div className="h-[40px]" />}
 
       {/* ───────────────────────────────────────────────
           🔴 HEADER PRINCIPAL – sticky
       ─────────────────────────────────────────────── */}
-      <header className="w-full bg-white shadow-sm fixed left-0 z-40 top-[40px]">
+      <header
+        className={`w-full bg-white shadow-sm fixed left-0 z-40 transition-all duration-200 ${
+          bannerVisible ? "top-[40px]" : "top-0"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 lg:px-8 h-20 flex justify-between items-center">
           {/* 🔴 LOGO (sin texto al costado, más pequeño y con aire) */}
           <Link href="/" className="flex items-center">
             <Image
               src="/logo.png"
               alt="DonaSonrisas"
-              width={120} // tamaño base lógico
+              width={120}
               height={120}
-              className="object-contain h-12 w-auto md:h-14" // altura real en pantalla
+              className="object-contain h-12 w-auto md:h-14"
             />
           </Link>
 

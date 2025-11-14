@@ -106,19 +106,19 @@ export default function Header({ showBanner = true }: HeaderProps) {
                       </li>
                       <li>
                         <Link
-                          href="/mision-vision"
+                          href="/mision-y-vision"
                           className="hover:text-[#c42d2d]"
                         >
                           Misión y visión
                         </Link>
                       </li>
                       <li>
-                        <Link href="/equipo" className="hover:text-[#c42d2d]">
+                        <Link href="/nuestro-equipo" className="hover:text-[#c42d2d]">
                           Nuestro equipo
                         </Link>
                       </li>
                       <li>
-                        <Link href="/aliados" className="hover:text-[#c42d2d]">
+                        <Link href="/nuestros-aliados" className="hover:text-[#c42d2d]">
                           Nuestros aliados
                         </Link>
                       </li>
@@ -271,13 +271,13 @@ export default function Header({ showBanner = true }: HeaderProps) {
                       <Link href="/nuestra-historia">Nuestra historia</Link>
                     </li>
                     <li>
-                      <Link href="/mision-vision">Misión y visión</Link>
+                      <Link href="/mision-y-vision">Misión y visión</Link>
                     </li>
                     <li>
-                      <Link href="/equipo">Nuestro equipo</Link>
+                      <Link href="/nuestro-equipo">Nuestro equipo</Link>
                     </li>
                     <li>
-                      <Link href="/aliados">Nuestros aliados</Link>
+                      <Link href="/nuestros-aliados">Nuestros aliados</Link>
                     </li>
                   </ul>
                 )}
